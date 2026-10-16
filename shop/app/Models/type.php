@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class type extends Model
 {
-    /** @use HasFactory<\Database\Factories\TypeFactory> */
-    use HasFactory;
+    protected $fillable = ['name','description'];
+    
+    public function products() {
+        return$this->hasMany(Product::class);
+    }
 }
